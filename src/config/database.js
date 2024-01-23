@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 
-module.exports = new Sequelize('express_scratchpad', 'root', '', {
-    'host': 'localhost',
-    'dialect': 'mysql',
+module.exports = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
+    'host': process.env.DB_HOST || 'localhost',
+    'dialect': process.env.DB_DIALECT || 'mysql',
 })
